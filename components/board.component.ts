@@ -24,3 +24,6 @@ export class BoardComponent implements OnInit {
     }
   }
 }
+/**
+Este componente renderiza el tablero y permite a los jugadores interactuar con él para colocar bloques y mover a sus caballeros.
+*/
