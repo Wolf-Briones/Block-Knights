@@ -1,0 +1,10 @@
+<div class="board">
+  <div *ngFor="let row of gameService.board; let rowIndex = index">
+    <div class="cell" *ngFor="let cell of row; let colIndex = index"
+         (click)="handleCellClick(rowIndex, colIndex)">
+      <span *ngIf="cell === 'block'">🧱</span>
+      <span *ngIf="cell === 'player1'">⚔️</span>
+      <span *ngIf="cell === 'player2'">🛡️</span>
+    </div>
+  </div>
+</div>
