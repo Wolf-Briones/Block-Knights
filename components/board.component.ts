@@ -19,10 +19,14 @@ export class BoardComponent implements OnInit {
   }
 
   moveKnight(player: string, newRow: number, newCol: number) {
-    if (this.gameService.currentPlayer === player) {
-      this.gameService.moveKnight(player, newRow, newCol);
+  if (this.gameService.currentPlayer === player) {
+    if (this.gameService.moveKnight(player, newRow, newCol)) {
+      // Comprobar si ocurre combate después del movimiento
+      this.gameService.engageCombat(player);
     }
   }
+}
+
 }
 /**
 Este componente renderiza el tablero y permite a los jugadores interactuar con él para colocar bloques y mover a sus caballeros.
